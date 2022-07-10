@@ -1,7 +1,8 @@
+import Card from "../UI/Card/Card";
 import styles from "./FormInput.module.css";
 
 const FormInput = () => {
-  return <div></div>;
+  return <Card> </Card>;
 };
 
 export default FormInput;
