@@ -1,12 +1,9 @@
-import FormInput from "./components/Form/FormInput";
-import Board from "./components/OuputBoard/Board";
 import "./App.css";
-
+import Form from "./components/Form/Form";
 function App() {
   return (
     <div className="App">
-      <FormInput />
-      <Board />
+      <Form></Form>
     </div>
   );
 }

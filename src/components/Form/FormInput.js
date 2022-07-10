@@ -1,8 +1,7 @@
-import Card from "../UI/Card/Card";
-import styles from "./FormInput.module.css";
+import styles from "./FromInput.module.css";
 
-const FormInput = () => {
-  return <Card> </Card>;
+const FromInput = () => {
+  return <form></form>;
 };
 
-export default FormInput;
+export default FromInput;

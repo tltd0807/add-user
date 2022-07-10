@@ -1,0 +1,17 @@
+.button {
+  background-color: rgb(134, 252, 61);
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: 100%;
+}
+.button:hover,
+.button:active {
+  cursor: pointer;
+  background-color: rgb(114, 245, 33);
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: 200px;
+  }
+}
