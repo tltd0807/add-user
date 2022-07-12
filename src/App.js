@@ -16,13 +16,13 @@ function App() {
   if (!validInput)
     return (
       <div className="App">
-        <Form errorMessageHandler={errorMessageHandler} />
-        <Modal closeModal={closeModal} />
+        <Form onErrorHandler={errorMessageHandler} />
+        <Modal closeModal={closeModal} messageError={errorMessage} />
       </div>
     );
   return (
     <div className="App">
-      <Form />
+      <Form onErrorHandler={errorMessageHandler} />
     </div>
   );
 }

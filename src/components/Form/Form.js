@@ -7,7 +7,7 @@ const USERARR = [
   { id: 1, userName: "Dat", age: 21 },
   { id: 2, userName: "To", age: 22 },
 ];
-const Form = () => {
+const Form = (props) => {
   const [userArr, setUserArr] = useState(USERARR);
 
   const saveUser = (newUser) => {
@@ -15,10 +15,14 @@ const Form = () => {
       return [newUser, ...userArr];
     });
   };
+
   return (
     <div>
       <Card className={styles["form-control"]}>
-        <FormInput onSaveUser={saveUser} />
+        <FormInput
+          onSaveUser={saveUser}
+          onErrorHandler={props.onErrorHandler}
+        />
       </Card>
       <Card className={styles["form-control"]}>
         <FormOutput userArr={userArr} />

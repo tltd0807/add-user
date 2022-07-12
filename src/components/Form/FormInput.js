@@ -14,7 +14,15 @@ const FormInput = (props) => {
   };
   const SubmitHandler = (event) => {
     event.preventDefault();
-
+    if (newUserAge === "" || newUserName === "") {
+      props.onErrorHandler(
+        "Please enter a valid name and age (non-empty values)"
+      );
+      return;
+    } else if (Number(newUserAge) <= 0) {
+      props.onErrorHandler("Please enter a valid age (>0)");
+      return;
+    }
     const newUser = {
       id: Math.random().toString(),
       userName: newUserName,
@@ -24,7 +32,6 @@ const FormInput = (props) => {
     setNewUserAge("");
     setNewUserName("");
   };
-
   return (
     <form className={styles.form} onSubmit={SubmitHandler}>
       <div className={styles["form-input"]}>
