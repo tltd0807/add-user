@@ -14,7 +14,8 @@
   width: 50rem;
   max-width: 95%;
   height: 10rem;
-  /* transform: translateY(-30px); */
+  /* transform: translateY(-75px); */
+  position: fixed;
 }
 .modal-header {
   background-color: aqua;
