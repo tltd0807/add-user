@@ -1,7 +1,53 @@
-import styles from "./FromInput.module.css";
+import styles from "./FormInput.module.css";
+import Button from "../UI/Button/Button";
+import { useState } from "react";
+const FormInput = (props) => {
+  const [newUserName, setNewUserName] = useState("");
+  const [newUserAge, setNewUserAge] = useState("");
 
-const FromInput = () => {
-  return <form></form>;
+  // lấy giá trị ở input mà ng dùng nhập để lưu lại
+  const userNameChangeHandler = (event) => {
+    setNewUserName(event.target.value);
+  };
+  const userAgeChangeHandler = (event) => {
+    setNewUserAge(event.target.value);
+  };
+  const SubmitHandler = (event) => {
+    event.preventDefault();
+
+    const newUser = {
+      id: Math.random().toString(),
+      userName: newUserName,
+      age: +newUserAge,
+    };
+    props.onSaveUser(newUser);
+    setNewUserAge("");
+    setNewUserName("");
+  };
+
+  return (
+    <form className={styles.form} onSubmit={SubmitHandler}>
+      <div className={styles["form-input"]}>
+        <label>User Name</label>
+        <input
+          type="text"
+          placeholder="Please enter your name"
+          onChange={userNameChangeHandler}
+          value={newUserName}
+        ></input>
+      </div>
+      <div className={styles["form-input"]}>
+        <label>User Age (Year)</label>
+        <input
+          type="number"
+          placeholder="Please enter your age"
+          onChange={userAgeChangeHandler}
+          value={newUserAge}
+        ></input>
+      </div>
+      <Button type="submit">Add User</Button>
+    </form>
+  );
 };
 
-export default FromInput;
+export default FormInput;

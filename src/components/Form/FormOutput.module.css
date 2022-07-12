@@ -1,0 +1,10 @@
+.form-ouput-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+}
+.form-ouput-li {
+  border: 1px solid rgb(205, 201, 201);
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
